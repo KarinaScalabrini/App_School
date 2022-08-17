@@ -2,17 +2,115 @@
 
 <%- include('head'); %>
 
-<body>
+<body class="body-game">
+<h1 class="title-games"> ENJOY OUR PLATFORM AND<br> COME PLAY WITH US!</h1>
 
      <section class="area-games">
-        <div class="box-game" style="background:blue; width:100px; height:100px"></div>
-        <div class="box-game"></div>
-        <div class="box-game"></div>
+        <!--Botão modal jogo da velha-->
+        <button class="box-game b-1" onclick="openModal()" >TIC TAC TOE</button>
+        <!--modal jogo da velha-->
+        <div class="modalJV" id="modalJV">
+         <button class="btnClose" onclick="closeModal()">x</button>
+         <div class="modalJV-P">
+            <div class="jogo-da-velha">
+               <button data-i="1"></button>
+               <button data-i="2"></button>
+               <button data-i="3"></button>
+               <button data-i="4"></button>
+               <button data-i="4"></button>
+               <button data-i="5"></button>
+               <button data-i="6"></button>
+               <button data-i="7"></button>
+               <button data-i="8"></button>
+            </div>
+           <h2 class="currentPlayer"></h2>
+         </div>
+         
+        </div>
+        <button class="box-game">MEMORY GAME</button>
+        <button class="box-game">SNAKE</button>
 
      </section>
 
+     <script>
+      /** Abrindo modal de jogos*/
+      function openModal(){
+         document.getElementById('modalJV').style.display = 'block';
+      }
+      function closeModal(){
+         document.getElementById('modalJV').style.display = 'none';
+      }
 
+      /**  Início do jogo da velha*/
+
+      const currentPlayer = document.querySelector(".currentPlayer");
+
+      let selected;
+      let player = "X";
+
+      let positions = [
+         [1, 2, 3],
+         [4, 5, 6],
+         [7, 8, 9],
+         [1, 4, 7],
+         [2, 5, 8],
+         [3, 6, 9],
+         [1, 5, 9],
+         [3, 5, 7],
+      ];
+
+      function init (){
+         selected = [];
+
+         currentPlayer.innerHTML = `Jogador da vez: ${player}`;
+
+         document.querySelectorAll(".jogo-da-velha button").forEach((item) =>{
+            item.innerHTML = "";
+            item.addEventListener("click",newMove);
+         });
+      }
+
+      init();
+
+      function newMove(e){
+         const index = e.target.getAttribute("data-i");
+         e.target.innerHTML = player;
+         e.target.removeEventListenner("click, newmove");
+         selected[index] = player;
+
+         setTimeout(() => {
+            check();
+         }, [100]);
+
+      player = player === "X" ? "O" : "X";
+      currentPlayer.innerHTML = `Jogador da vez: ${player}`;
+
+
+      }
+
+      function check() {
+         let playerLastMove = player === "X" ? "O" : "X";
+
+         const items = selected
+         .map((item, i) => [item, i])
+         .filter((item) => item[0] === playerLastMove)
+         .map((item) => item[1]);
+
+         for (pos of positions) {
+            if (pos.every((item) => items.includes(item))){
+               alert("O jogador '" +  playerLastMove +"' Ganhou! ");
+            }
+         }
+
+         if (seleted.filter((item) => item).length === 9){
+            alert("Deu empate!");
+            init();
+            return;
+         }
+      }
+   </script>
 </body>
+
 
 
 </html>

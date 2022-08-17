@@ -14,6 +14,8 @@ app.get("/sobre", function (req, res){
 app.get("/games", function (req, res){
     res.render("games");
 })
+app.use('/public', express.static('public'));
 
 app.listen(8080);
 console.log("Rodando ok")
+
