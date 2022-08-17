@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<style>
+    body{
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        margin:0px;
+    }
+    
+    
+    
+    .section-1{
+        display:flex;
+        justify-content: space-around;
+        margin-top:10px;
+        padding:40px 40px 40px 40px;
+        height:45vh;
+    }
+    
+    .title{
+        font-size:35px;
+        color:#035bc0;
+        justify-content:center;
+        margin-top:30px;
+        text-align: center;
+    }
+    .img-crianca{
+        width:400px;
+        height:380px;
+        border-radius:8px;
+        
+    }
+    .section-2{
+        width:60vw;
+        height:9vh;
+        display:inline-flex;
+        position:relative;
+        margin-left:200px;
+        
+        
+    }
+    .article-1{
+        width:20%;
+        height:100%;
+        font-size: 20px;
+        color:#fdfdfe;
+        position: relative;
+        justify-content: center;
+        text-align: center;
+        padding-top:60px;
+    }
+    .article-1:hover{
+        color:black;
+        transition: 1s;
+    }
+    .bi-1-circle-fill{
+        font-size:20px;
+        color:blue;
+    }
+    .p-t{
+        color:black;
+        font-size:18px;
+        margin-top: 5px;
+    }
+    .bi {
+        font-size:28px;
+        position:absolute;
+        right:47px;
+        top:25px;
+    }
+</style>
+    <%- include('head'); %>
+    <body>
+
+    <%- include('header'); %>
+
+    <section class="section-1">
+
+        <article class="title">If you fall asleep<br> now, you will dream.<br> If you study now, you <br>will live your dream.
+        <p class="p-t">It's Ready?</p></article>
+        <article>
+            <img src="foto_crianca.jpg" class="img-crianca">
+        </article>
+
+    </section>
+
+    <section class="section-2">
+        <article class="article-1" style="background:rgb(72, 197, 206)">Learning<i class="bi bi-book"></i></article>
+
+        <article class="article-1" style="background:#f0cc04">Philosophy<i class="bi bi-lightbulb"></i></article>
+
+        <article class="article-1" style="background:#fa51a5">Practice<i class="bi bi-command"></i></article>
+
+        <article class="article-1" style="background:#3547ec"><a href="/games">Games</a><i class="bi bi-puzzle-fill"></i></article>
+    </section>
+
+    <section class="section-3"></section>
+
+</body>
+</html>

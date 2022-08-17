@@ -1,0 +1,36 @@
+header{
+    width:100vw;
+    height:8vh;
+    background: #fff6d259;
+    align-items: center;
+    position:relative;
+    
+
+}
+ul{
+    display:flex;
+    flex-flow:row;
+    justify-content: space-evenly;
+    list-style-type: none;
+    width:200px;
+    position:absolute;
+    right:25px;
+    margin-top:8px;
+    margin-right:65px;
+}
+.item-1{
+    color:#FF69B4;
+    font-size:20px;
+    font-weight: 700;
+    list-style-type: none;
+    position:absolute;
+    left:105px;
+    margin-top:12px;
+}
+.item-2{
+    color:black;
+    font-size:11px;
+    margin-top:12px;
+    font-weight: 700;
+    padding-right:50px;
+}
