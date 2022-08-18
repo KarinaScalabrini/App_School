@@ -12,16 +12,16 @@
         <div class="modalJV" id="modalJV">
          <button class="btnClose" onclick="closeModal()">x</button>
          <div class="modalJV-P">
-            <div class="jogo-da-velha">
+            <div class="game">
                <button data-i="1"></button>
                <button data-i="2"></button>
                <button data-i="3"></button>
-               <button data-i="4"></button>
                <button data-i="4"></button>
                <button data-i="5"></button>
                <button data-i="6"></button>
                <button data-i="7"></button>
                <button data-i="8"></button>
+               <button data-i="9"></button>
             </div>
            <h2 class="currentPlayer"></h2>
          </div>
@@ -59,12 +59,12 @@
          [3, 5, 7],
       ];
 
-      function init (){
+      function init () {
          selected = [];
 
-         currentPlayer.innerHTML = `Jogador da vez: ${player}`;
+         currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
 
-         document.querySelectorAll(".jogo-da-velha button").forEach((item) =>{
+         document.querySelectorAll(".game button").forEach((item) =>{
             item.innerHTML = "";
             item.addEventListener("click",newMove);
          });
@@ -75,7 +75,7 @@
       function newMove(e){
          const index = e.target.getAttribute("data-i");
          e.target.innerHTML = player;
-         e.target.removeEventListenner("click, newmove");
+         e.target.removeEventListener("click", newmove);
          selected[index] = player;
 
          setTimeout(() => {
@@ -83,7 +83,7 @@
          }, [100]);
 
       player = player === "X" ? "O" : "X";
-      currentPlayer.innerHTML = `Jogador da vez: ${player}`;
+      currentPlayer.innerHTML = `JOGADOR DA VEZ: ${player}`;
 
 
       }
@@ -99,10 +99,12 @@
          for (pos of positions) {
             if (pos.every((item) => items.includes(item))){
                alert("O jogador '" +  playerLastMove +"' Ganhou! ");
+               init();
+               return;
             }
          }
 
-         if (seleted.filter((item) => item).length === 9){
+         if (selected.filter((item) => item).length === 9){
             alert("Deu empate!");
             init();
             return;

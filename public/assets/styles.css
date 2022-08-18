@@ -18,12 +18,12 @@ body{
     font-size:35px;
     color:#035bc0;
     justify-content:center;
-    margin-top:30px;
+    margin-top:70px;
     text-align: center;
 }
 .img-crianca{
-    width:400px;
-    height:380px;
+    width:480px;
+    height:460px;
     border-radius:8px;
     box-shadow: 2px 2px 4px #808080;
     
@@ -63,7 +63,7 @@ body{
 .bi {
     font-size:28px;
     position:absolute;
-    right:60px;
+    right:80px;
     top:25px;
 }
 /*inicio header*/
@@ -89,27 +89,28 @@ ul{
 }
 .item-1{
     color:#FF69B4;
-    font-size:20px;
+    font-size:30px;
     font-weight: 700;
     list-style-type: none;
     position:absolute;
     left:105px;
-    margin-top:12px;
+    margin-top:18px;
 }
 .item-2{
     color:black;
-    font-size:11px;
-    margin-top:12px;
+    font-size:13px;
+    margin-top:14px;
     font-weight: 700;
     padding-right:50px;
 }
 
 /* página de jogos*/
 .body-game{
-    background-image:url('./foto-pinos.jpg');
+    background:#a8d0f5
+    /*
     background-size:cover;
     background-position:100%;
-    overflow:hidden;
+    overflow:hidden;*/
 }
 .area-games{
     padding:70px 100px;
@@ -159,11 +160,11 @@ ul{
     border:1px solid blue;
 }
 .modalJV-P{
-    display:flex;
+    display:block;
     width:450px;
-    height:450px;
+    height:470px;
     border-radius: 8px;
-    background:#fdfdfeb6;
+    background:#fdfdfee7;
     border:1px solid #808080;
     margin:85px 250px 70px 270px;
     
@@ -188,15 +189,25 @@ ul{
     color:#fdfdfe;
 }
 /*Início estilização do jogo da velha  */
-.jogo-da-velha{
+.game{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px;
+    width:420px;
+    padding:15px;
 }
-.jogo-da-velha button {
-    width:100px;
-    height:100px;
+.game button {
+    width:100%;
+    height:130px;
     font-size:50px;
     background:white;
     cursor:pointer;
     color:black;
+    border:1px solid #808080;
+}
+.currentPlayer{
+    top:0px;
+    font-size:25px;
+    text-align:center;
+    margin:0px;
 }
