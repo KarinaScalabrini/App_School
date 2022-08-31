@@ -16,6 +16,10 @@ app.get("/games", function (req, res){
 })
 app.use('/public', express.static('public'));
 
+app.get("/store", function (req, res){
+    res.render("store");
+})
+
 app.listen(8080);
 console.log("Rodando ok")
 
